@@ -1,0 +1,5 @@
+# Tools, raw uploads and licensed originals stay on this computer only.
+_dev/
+# Windows clutter
+Thumbs.db
+desktop.ini

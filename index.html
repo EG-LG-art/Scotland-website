@@ -1,0 +1,753 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Binsness House &amp; Bothy · Findhorn Bay, Moray</title>
+<meta name="description" content="Binsness: a house and bothy at the end of the Culbin Forest, almost an island between Findhorn Bay and the River Findhorn. Sixteen miles of beach and no one on it.">
+<meta property="og:title" content="Binsness House & Bothy">
+<meta property="og:description" content="Almost an island at the end of the Culbin Forest, Findhorn Bay, Moray.">
+<meta property="og:image" content="assets/img/aerial-hero.jpg">
+<link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+
+<!-- reusable crest symbol -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="crest" viewBox="0 0 132 96">
+    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M57 13 C78 6 104 7 128 19 C110 18 86 19 62 22 Z" fill="currentColor" stroke-width="1.5"/>
+      <path d="M54 5 L56 22" stroke-width="3.2"/><path d="M49 14 Q56 11 63 13" stroke-width="2.4"/>
+      <path d="M46 21 C50 16 60 16 64 20 C66 24 64 30 58 31 L50 31 C45 30 43 25 46 21 Z" fill="currentColor" stroke-width="1.5"/>
+      <path d="M50 30 L13 59 L23 66 L60 34 Z" fill="currentColor" stroke-width="1.5"/>
+      <path d="M46 34 L19 56 M51 37 L24 60 M42 40 L22 57" stroke="var(--crest-hl,#f4ecdc)" stroke-width="1.1" opacity=".75"/>
+      <circle cx="16" cy="62" r="7" fill="currentColor" stroke-width="1.5"/>
+      <path d="M11 66 L20 58 L60 82 L49 86 Z" fill="currentColor" stroke-width="1.5"/>
+      <path d="M20 64 L50 81 M24 61 L56 80 M18 67 L44 83" stroke="var(--crest-hl,#f4ecdc)" stroke-width="1.1" opacity=".75"/>
+      <path d="M4 86 C4 81 8 80 12 80 L92 80 C97 80 99 83 99 86 C99 89 97 92 92 92 L12 92 C8 92 4 91 4 86 Z" fill="currentColor" stroke-width="1.5"/>
+      <path d="M18 81 L24 91 M34 81 L40 91 M50 81 L56 91 M66 81 L72 91 M82 81 L88 91" stroke="var(--crest-hl,#f4ecdc)" stroke-width="1.4" opacity=".8"/>
+    </g>
+  </symbol>
+</svg>
+
+<!-- Bookmark ribbon: the site's menu -->
+<button class="ribbon" id="ribbon" aria-haspopup="dialog" aria-controls="drawer" title="Contents">
+  <svg viewBox="0 0 132 96"><use href="#crest"/></svg><span>Contents</span>
+</button>
+<div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Contents">
+  <div class="scrim" data-close></div>
+  <div class="sheet">
+    <button class="x" data-close aria-label="Close">×</button>
+    <nav class="contents" aria-label="Chapters"><h3>Contents</h3><ol class="toc"></ol></nav>
+    <p class="hand" style="font-size:22px;margin-top:26px;color:var(--ink-soft)">…or close this and wander the map. Most things on it can be clicked.</p>
+  </div>
+</div>
+
+<!-- ============ PROLOGUE ============ -->
+<header class="prologue" id="top">
+  <img class="aerial" src="assets/img/aerial-hero.jpg" alt="Aerial view of Binsness: the stone house and its avenue of Irish yews, Culbin Forest behind and Findhorn Bay beyond">
+  <div class="prologue-inner">
+    <div class="seal" aria-hidden="true"><svg viewBox="0 0 132 96"><use href="#crest"/></svg></div>
+    <div>
+      <p class="sub">at the very end of the Culbin Forest</p>
+      <h1>Binsness</h1>
+      <p class="sub">House &amp; Bothy · Findhorn Bay · Moray</p>
+      <div class="ledger" aria-label="Binsness in numbers">
+        <span><b>5,000</b> acres of forest behind</span>
+        <span><b>2</b> sides of water</span>
+        <span><b>16</b> miles of beach</span>
+        <span><b>0</b> people on it, usually</span>
+      </div>
+    </div>
+    <button class="begin" id="begin"><span>Unfold the map</span><span class="rope" aria-hidden="true"></span></button>
+  </div>
+</header>
+
+<!-- ============ THE MAP ============ -->
+<main>
+<section class="mapsec" id="map" aria-labelledby="map-title">
+  <div class="wrap">
+    <p class="folio">A Map of Sorts</p>
+    <h2 class="title" id="map-title">Almost an Island</h2>
+    <p class="lede">Binsness stands alone where the forest runs out of land: Findhorn Bay on one side, the River Findhorn on the other, a private road behind. Nothing here is drawn to scale. Most things can be clicked.</p>
+  </div>
+
+  <div class="wrap">
+  <div class="mapframe">
+  <svg class="map" id="mapsvg" viewBox="0 0 1200 800" role="group" aria-label="Illustrated map of Binsness and its surroundings">
+    <defs>
+      <filter id="rough"><feTurbulence type="fractalNoise" baseFrequency=".035" numOctaves="2" seed="4"/><feDisplacementMap in="SourceGraphic" scale="5"/></filter>
+      <filter id="rough2"><feTurbulence type="fractalNoise" baseFrequency=".02" numOctaves="2" seed="9"/><feDisplacementMap in="SourceGraphic" scale="9"/></filter>
+      <pattern id="dunes" width="26" height="14" patternUnits="userSpaceOnUse"><path d="M2 10 q6 -7 12 0" fill="none" stroke="#b79b5d" stroke-width="1"/></pattern>
+      <pattern id="marsh" width="18" height="12" patternUnits="userSpaceOnUse"><path d="M4 10 v-6 M8 10 v-8 M12 10 v-5" stroke="#6e8a5a" stroke-width="1"/></pattern>
+    </defs>
+
+    <!-- sea & bay -->
+    <rect class="water" width="1200" height="800"/>
+    <g class="sea-lines" id="sealines"></g>
+    <!-- land mass -->
+    <path class="land" filter="url(#rough2)" d="M-20 300 C120 280 300 292 470 282 C600 274 700 262 760 268 C790 272 800 300 790 330 C760 380 700 400 690 450 C682 500 700 540 740 560 C800 590 900 600 960 560 C1010 520 1030 460 1010 400 C995 350 940 320 905 300 C900 290 930 270 980 262 C1060 250 1130 245 1220 240 L1220 820 L-20 820 Z"/>
+    <!-- bay water drawn over land -->
+    <path class="water" filter="url(#rough2)" d="M790 300 C830 270 880 268 905 300 C945 330 1000 360 1010 410 C1022 470 990 540 940 556 C880 576 800 570 755 545 C715 520 705 480 712 445 C722 400 770 360 790 330 Z"/>
+    <path class="water" d="M786 258 C820 254 880 254 914 258 L912 312 C880 300 820 304 788 336 Z"/>
+    <path class="shore" filter="url(#rough)" d="M790 330 C770 360 722 400 712 445 C705 480 715 520 755 545 C800 570 880 576 940 556 C990 540 1022 470 1010 410 C1000 360 945 330 905 300"/>
+    <!-- sandbanks in bay -->
+    <path d="M800 470 C840 450 900 455 930 480 C900 500 830 505 800 470 Z" fill="#e9d7a6" opacity=".9"/>
+    <path d="M860 380 C885 372 910 380 918 395 C895 402 870 398 860 380 Z" fill="#e9d7a6" opacity=".9"/>
+    <!-- beach strip -->
+    <path class="beach" filter="url(#rough)" d="M-20 300 C120 280 300 292 470 282 C600 274 700 262 760 268 C790 272 800 290 792 305 C700 300 600 306 470 314 C300 324 120 318 -20 330 Z"/>
+    <rect x="0" y="300" width="780" height="22" fill="url(#dunes)" opacity=".8"/>
+    <path class="shore" filter="url(#rough)" d="M-20 300 C120 280 300 292 470 282 C600 274 700 262 760 268 C790 272 800 300 790 330"/>
+    <path class="shore" filter="url(#rough)" d="M905 300 C900 290 930 270 980 262 C1060 250 1130 245 1220 240"/>
+    <!-- marsh by bay -->
+    <path d="M700 520 C720 540 760 560 790 568 L760 600 C720 590 690 560 680 540 Z" fill="url(#marsh)"/>
+
+    <!-- River Findhorn -->
+    <path class="river" filter="url(#rough)" d="M612 820 C618 760 590 720 616 682 C640 646 700 650 716 610 C726 586 736 566 752 548"/>
+    <path class="river-edge" filter="url(#rough)" d="M606 820 C612 760 584 720 610 682 C634 646 694 646 710 606 M620 820 C626 760 598 720 624 686 C648 652 708 656 724 614"/>
+
+    <!-- forest -->
+    <g id="forest"></g>
+
+    <!-- private road -->
+    <path class="road" d="M640 520 C600 560 560 600 530 650 C505 690 470 740 440 800"/>
+    <text class="note" x="452" y="690" transform="rotate(-58 452 690)">private road</text>
+
+    <!-- labels -->
+    <text class="label big" x="60" y="120" opacity=".8">MORAY FIRTH</text>
+    <text class="label it" x="250" y="470" opacity=".75">The Culbin Forest</text>
+    <text class="note" x="40" y="352">← sixteen miles of beach to Nairn</text>
+    <text class="label it" x="820" y="430" opacity=".75">Findhorn Bay</text>
+    <text class="label it" x="640" y="770" transform="rotate(-80 640 770)" opacity=".7">River Findhorn</text>
+
+    <!-- compass with crest -->
+    <g transform="translate(1100 700)" aria-hidden="true">
+      <circle r="52" fill="#fbf6ea" stroke="var(--ink)" stroke-width="1.5"/>
+      <circle r="44" fill="none" stroke="var(--ink)" stroke-width=".8"/>
+      <path d="M0 -50 L7 0 L0 50 L-7 0 Z" fill="var(--ink)" opacity=".85"/>
+      <path d="M-50 0 L0 6 L50 0 L0 -6 Z" fill="var(--ink)" opacity=".35"/>
+      <text x="-6" y="-56" class="label" style="font-size:16px">N</text>
+      <svg x="-22" y="-16" width="44" height="32" viewBox="0 0 132 96" style="color:var(--teal);--crest-hl:#fbf6ea"><use href="#crest"/></svg>
+    </g>
+
+    <!-- ===== CURIOSITIES (easter eggs) ===== -->
+    <!-- sun -->
+    <g class="cur" data-cur="sun" tabindex="0" role="button" aria-label="Curiosity: the sun" transform="translate(1100 95)">
+      <circle class="spark" r="62" opacity="0"/>
+      <g class="sunrays"><path d="M0 -58 L0 -44 M0 44 L0 58 M-58 0 L-44 0 M44 0 L58 0 M-41 -41 L-31 -31 M31 31 L41 41 M-41 41 L-31 31 M31 -31 L41 -41" stroke="var(--gorse)" stroke-width="5" stroke-linecap="round"/></g>
+      <circle r="34" fill="#f2c14e" stroke="var(--ink)" stroke-width="1.5"/>
+      <path d="M-12 -6 q3 -4 6 0 M6 -6 q3 -4 6 0 M-10 10 q10 8 20 0" fill="none" stroke="var(--ink)" stroke-width="2" stroke-linecap="round"/>
+    </g>
+    <!-- dolphins -->
+    <g class="cur" data-cur="dolphins" tabindex="0" role="button" aria-label="Curiosity: something in the Firth">
+      <circle class="spark" cx="560" cy="170" r="54" opacity="0"/>
+      <g class="dolphin" id="dolphin1"><path d="M520 180 C540 150 590 148 610 172 C596 168 588 170 584 176 C570 168 548 170 536 186 Z" fill="#5c6f7a" stroke="var(--ink)" stroke-width="1.3"/><path d="M566 158 l6 -14 l6 16" fill="#5c6f7a" stroke="var(--ink)" stroke-width="1.2"/></g>
+      <g class="dolphin" id="dolphin2"><path d="M600 205 C615 185 650 184 664 200 C654 198 648 200 645 204 C636 199 620 200 611 210 Z" fill="#6c7f8a" stroke="var(--ink)" stroke-width="1.2"/></g>
+      <path d="M500 196 q20 -8 40 0 q20 8 40 0 q20 -8 40 0 q20 8 40 0" stroke="#7fa6ac" stroke-width="1.6" fill="none"/>
+    </g>
+    <!-- seals on the sandbank -->
+    <g class="cur" data-cur="seals" tabindex="0" role="button" aria-label="Curiosity: lumps on the sandbank">
+      <circle class="spark" cx="865" cy="476" r="34" opacity="0"/>
+      <ellipse cx="850" cy="476" rx="18" ry="7" fill="#7b7470" stroke="var(--ink)"/><circle cx="866" cy="472" r="6" fill="#7b7470" stroke="var(--ink)"/>
+      <ellipse cx="886" cy="482" rx="15" ry="6" fill="#8a837e" stroke="var(--ink)"/><circle cx="899" cy="478" r="5" fill="#8a837e" stroke="var(--ink)"/>
+    </g>
+    <!-- ghost chimney of the buried barony -->
+    <g class="cur" data-cur="chimney" tabindex="0" role="button" aria-label="Curiosity: a chimney in the sand">
+      <circle class="spark" cx="170" cy="372" r="40" opacity="0"/>
+      <path d="M130 392 C150 372 190 368 214 392 Z" fill="#e6cf98" stroke="var(--ink)" stroke-width="1.2"/>
+      <rect x="164" y="360" width="14" height="22" fill="#b9a48a" stroke="var(--ink)" stroke-width="1.2"/>
+      <path class="smoke" d="M171 356 q-6 -8 0 -14 q6 -6 0 -12" fill="none" stroke="#9a948c" stroke-width="2"/>
+    </g>
+    <!-- the laird and the devil at cards -->
+    <g class="cur" data-cur="cards" tabindex="0" role="button" aria-label="Curiosity: a very large dune">
+      <circle class="spark" cx="440" cy="392" r="44" opacity="0"/>
+      <path d="M392 410 C410 372 470 370 490 410 Z" fill="#e3c88c" stroke="var(--ink)" stroke-width="1.3"/>
+      <path d="M420 402 l7 -12 l9 8 z M446 400 l8 -11 l7 11 z" fill="#fbf6ea" stroke="var(--ink)" stroke-width="1"/>
+      <text class="note" x="402" y="432" style="font-size:17px">the big dune</text>
+    </g>
+    <!-- Hill 99 tower -->
+    <g class="cur" data-cur="hill99" tabindex="0" role="button" aria-label="Curiosity: a tower in the trees">
+      <circle class="spark" cx="330" cy="520" r="40" opacity="0"/>
+      <path d="M320 548 L326 500 L336 500 L342 548 M322 530 L340 530 M324 515 L338 515" stroke="var(--ink)" stroke-width="2" fill="none"/>
+      <rect x="318" y="490" width="26" height="12" fill="#c49a62" stroke="var(--ink)" stroke-width="1.3"/>
+      <text class="note" x="300" y="572" style="font-size:18px">Hill 99</text>
+    </g>
+    <!-- the osprey -->
+    <g class="cur" data-cur="osprey" tabindex="0" role="button" aria-label="Curiosity: a bird overhead">
+      <circle class="spark" cx="760" cy="150" r="36" opacity="0"/>
+      <path d="M730 150 q15 -16 30 -2 q15 -14 30 2" fill="none" stroke="var(--ink)" stroke-width="2.5" stroke-linecap="round"/>
+    </g>
+    <!-- the apple tree that came back -->
+    <g class="cur" data-cur="apple" tabindex="0" role="button" aria-label="Curiosity: a lonely tree">
+      <circle class="spark" cx="94" cy="440" r="36" opacity="0"/>
+      <path d="M94 470 v-24" stroke="#6b4b2a" stroke-width="4"/><circle cx="94" cy="436" r="17" fill="#6f8d45" stroke="var(--ink)" stroke-width="1.2"/>
+      <circle cx="88" cy="434" r="3.5" fill="#c0392b"/><circle cx="100" cy="440" r="3.5" fill="#c0392b"/><circle cx="96" cy="428" r="3.5" fill="#c0392b"/>
+    </g>
+    <!-- three witches on the road to Forres -->
+    <g class="cur" data-cur="witches" tabindex="0" role="button" aria-label="Curiosity: three figures on the heath">
+      <circle class="spark" cx="1000" cy="640" r="40" opacity="0"/>
+      <g fill="var(--ink)"><path d="M978 662 l6 -26 l6 26 z"/><path d="M996 662 l6 -30 l6 30 z"/><path d="M1014 662 l6 -26 l6 26 z"/><path d="M976 638 l16 -2 M994 634 l16 -2 M1012 638 l16 -2" stroke="var(--ink)" stroke-width="2"/></g>
+    </g>
+
+    <!-- ===== CHAPTER HOTSPOTS ===== -->
+    <!-- the house + yew avenue -->
+    <g class="hot" data-go="house" tabindex="0" role="link" aria-label="Chapter: The House">
+      <ellipse class="halo" cx="650" cy="480" rx="88" ry="60"/>
+      <g class="wob">
+        <!-- yew avenue towards the bay -->
+        <g id="yews"></g>
+        <path d="M612 492 L612 462 L630 446 L648 462 L648 470 L672 470 L672 460 L690 446 L708 460 L708 492 Z" fill="#e7dcc4" stroke="var(--ink)" stroke-width="1.6"/>
+        <path d="M612 462 L630 446 L648 462 M672 460 L690 446 L708 460 M648 470 L660 460 L672 470" fill="#8e8a93" stroke="var(--ink)" stroke-width="1.4"/>
+        <rect x="624" y="440" width="5" height="10" fill="#b9a48a" stroke="var(--ink)"/><rect x="694" y="438" width="5" height="10" fill="#b9a48a" stroke="var(--ink)"/>
+        <path class="smoke" d="M626 436 q-4 -6 0 -10 q4 -4 0 -9" fill="none" stroke="#9a948c" stroke-width="1.6"/>
+        <path d="M620 474 h8 v8 h-8z M636 474 h8 v8 h-8z M680 474 h8 v8 h-8z M696 474 h8 v8 h-8z M656 478 h8 v14 h-8z" fill="#fff4cf" stroke="var(--ink)" stroke-width="1"/>
+      </g>
+      <g transform="translate(560 404)"><rect class="tag" x="0" y="0" width="128" height="30" rx="2"/><text class="tagtext" x="64" y="21" text-anchor="middle">The House</text></g>
+    </g>
+    <!-- bothy -->
+    <g class="hot" data-go="bothy" tabindex="0" role="link" aria-label="Chapter: The Bothy">
+      <ellipse class="halo" cx="604" cy="528" rx="44" ry="30"/>
+      <g class="wob"><path d="M588 540 L588 524 L604 512 L620 524 L620 540 Z" fill="#e7dcc4" stroke="var(--ink)" stroke-width="1.5"/><path d="M588 524 L604 512 L620 524" fill="#8e8a93" stroke="var(--ink)" stroke-width="1.3"/><rect x="600" y="530" width="7" height="10" fill="#fff4cf" stroke="var(--ink)"/></g>
+      <g transform="translate(500 548)"><rect class="tag" x="0" y="0" width="96" height="28" rx="2"/><text class="tagtext" x="48" y="20" text-anchor="middle">The Bothy</text></g>
+    </g>
+    <!-- garden -->
+    <g class="hot" data-go="garden" tabindex="0" role="link" aria-label="Chapter: The Garden">
+      <ellipse class="halo" cx="740" cy="500" rx="40" ry="26"/>
+      <g class="wob"><circle cx="730" cy="502" r="7" fill="#b07ab8" stroke="var(--ink)"/><circle cx="744" cy="498" r="6" fill="#e3a33a" stroke="var(--ink)"/><circle cx="752" cy="508" r="6" fill="#d1607a" stroke="var(--ink)"/></g>
+      <g transform="translate(724 515)"><rect class="tag" x="0" y="0" width="110" height="28" rx="2"/><text class="tagtext" x="55" y="20" text-anchor="middle">The Garden</text></g>
+    </g>
+    <!-- the area around: a shell on the beach -->
+    <g class="hot" data-go="area" tabindex="0" role="link" aria-label="Chapter: The Area Surrounding Binsness">
+      <ellipse class="halo" cx="650" cy="296" rx="44" ry="24"/>
+      <g class="wob"><path d="M634 304 q16 -30 32 0 z" fill="#f3e3c8" stroke="var(--ink)" stroke-width="1.4"/><path d="M650 278 v26 M642 284 l4 20 M658 284 l-4 20" stroke="var(--ink)" stroke-width="1"/></g>
+      <g transform="translate(572 230)"><rect class="tag" x="0" y="0" width="156" height="44" rx="2"/><text class="tagtext" x="78" y="19" text-anchor="middle">The Area</text><text class="tagtext" x="78" y="37" text-anchor="middle">Around Binsness</text></g>
+    </g>
+    <!-- our story (in the forest) -->
+    <g class="hot" data-go="story" tabindex="0" role="link" aria-label="Chapter: Our Story">
+      <ellipse class="halo" cx="240" cy="402" rx="70" ry="34"/>
+      <g class="wob"><path d="M212 410 l0 -22 l28 -4 l28 4 l0 22 l-28 -4 z" fill="#fbf6ea" stroke="var(--ink)" stroke-width="1.5"/><path d="M240 384 v22" stroke="var(--ink)"/><path d="M218 392 h16 M218 398 h14 M246 392 h16 M246 398 h14" stroke="var(--ink-soft)" stroke-width="1"/></g>
+      <g transform="translate(176 416)"><rect class="tag" x="0" y="0" width="128" height="28" rx="2"/><text class="tagtext" x="64" y="20" text-anchor="middle">Our Story</text></g>
+    </g>
+    <!-- Findhorn across the water (story part iv) -->
+    <g class="hot" data-go="story" data-anchor="findhorn" tabindex="0" role="link" aria-label="Our Story: Findhorn, across the water">
+      <ellipse class="halo" cx="960" cy="290" rx="70" ry="34"/>
+      <g class="wob" fill="#e7dcc4" stroke="var(--ink)" stroke-width="1.3">
+        <path d="M925 300 v-12 l8 -7 l8 7 v12 z"/><path d="M944 300 v-14 l9 -8 l9 8 v14 z"/><path d="M965 300 v-10 l7 -6 l7 6 v10 z"/><path d="M982 300 v-13 l8 -7 l8 7 v13 z"/>
+        <ellipse cx="1004" cy="296" rx="9" ry="6" fill="#c49a62"/>
+      </g>
+      <g transform="translate(920 228)"><rect class="tag" x="0" y="0" width="98" height="28" rx="2"/><text class="tagtext" x="49" y="20" text-anchor="middle">Findhorn</text></g>
+    </g>
+    <!-- water taxi -->
+    <g class="cur" data-cur="taxi" tabindex="0" role="button" aria-label="Curiosity: a little boat">
+      <circle class="spark" cx="748" cy="452" r="26" opacity="0"/>
+      <g class="taxi" id="taxi"><path d="M732 452 h32 l-5 9 h-22 z" fill="#c0392b" stroke="var(--ink)" stroke-width="1.2"/><path d="M748 452 v-18 l10 14 z" fill="#fbf6ea" stroke="var(--ink)" stroke-width="1"/></g>
+    </g>
+    <!-- food: pubs & pizza in Findhorn -->
+    <g class="hot" data-go="food" tabindex="0" role="link" aria-label="Chapter: Food">
+      <ellipse class="halo" cx="1060" cy="330" rx="56" ry="34"/>
+      <g class="wob"><path d="M1040 332 a20 8 0 0 0 40 0 z" fill="#fbf6ea" stroke="var(--ink)" stroke-width="1.3"/><path d="M1046 326 q4 -8 0 -14 M1060 326 q4 -8 0 -14 M1074 326 q4 -8 0 -14" fill="none" stroke="#9a948c" stroke-width="1.6"/></g>
+      <g transform="translate(1016 344)"><rect class="tag" x="0" y="0" width="84" height="28" rx="2"/><text class="tagtext" x="42" y="20" text-anchor="middle">Food</text></g>
+    </g>
+    <!-- things to do -->
+    <g class="hot" data-go="explore" tabindex="0" role="link" aria-label="Chapter: Things to Do">
+      <ellipse class="halo" cx="880" cy="690" rx="80" ry="42"/>
+      <g class="wob" fill="#d8ccb4" stroke="var(--ink)" stroke-width="1.4"><path d="M852 712 v-34 h10 v-8 h8 v8 h10 v-8 h8 v8 h10 v34 z"/><path d="M866 712 v-12 a5 5 0 0 1 10 0 v12" fill="var(--ink)"/><path d="M898 712 v-48 h14 v48 z"/><path d="M896 664 l9 -12 l9 12 z" fill="#8e8a93"/></g>
+      <g transform="translate(820 722)"><rect class="tag" x="0" y="0" width="134" height="28" rx="2"/><text class="tagtext" x="67" y="20" text-anchor="middle">Things to Do</text></g>
+      <text class="note" x="920" y="700" style="font-size:18px">Forres, 5 miles</text>
+    </g>
+    <!-- booking: post box at the end of the road -->
+    <g class="hot" data-go="booking" tabindex="0" role="link" aria-label="Chapter: Booking">
+      <ellipse class="halo" cx="470" cy="740" rx="60" ry="40"/>
+      <g class="wob"><rect x="458" y="716" width="22" height="34" rx="9" fill="#b8322a" stroke="var(--ink)" stroke-width="1.4"/><rect x="462" y="726" width="14" height="3" fill="var(--ink)"/><rect x="456" y="748" width="26" height="6" fill="#8c2f1e" stroke="var(--ink)"/></g>
+      <g transform="translate(372 760)"><rect class="tag" x="0" y="0" width="92" height="28" rx="2"/><text class="tagtext" x="46" y="20" text-anchor="middle">Booking</text></g>
+    </g>
+  </svg>
+  </div>
+
+  <div class="maphelp">
+    <p class="counter" id="counter" aria-live="polite">Curiosities found: <span id="found">0</span> of <span id="total">9</span><span class="pips" id="pips" aria-hidden="true"></span></p>
+    <p class="hand" style="font-size:22px;margin:0;color:var(--ink-soft)">Tip: labels open chapters. Everything else is just for fun.</p>
+  </div>
+
+  <nav class="contents rv" aria-label="Chapters"><h3>Contents</h3><ol class="toc"></ol></nav>
+  </div>
+</section>
+</main>
+
+<div class="note-card" id="note" role="status" aria-live="polite"><button class="x" aria-label="Close">×</button><h4></h4><p></p></div>
+
+<!-- ============ CHAPTER I: OUR STORY ============ -->
+<article class="chapter" id="ch-story" aria-label="Our Story" tabindex="-1">
+  <div class="chapter-bar"><button class="back" data-back>← Back to the map</button><span class="runhead">Chapter I · Our Story</span></div>
+  <div class="chapter-body wrap">
+    <p class="folio">Chapter the First</p>
+    <h2 class="title">Our Story</h2>
+    <p class="lede">A doctor in a boat, a barony under the sand, and some very large cabbages across the bay.</p>
+
+    <div class="prose">
+      <h3><small>i.</small>A Doctor, a Boat and a Row of Yews</h3>
+      <p class="dropcap">Some houses are found on maps. Binsness was found from a boat. One day a doctor was out on Findhorn Bay. He was a close friend and confidant of the future King George VI. From the water he saw an elegant avenue of Irish yews marching up a garden towards a grey stone house. He fell for it on the spot and vowed to make it his.</p>
+    </div>
+    <figure class="photo wide tilt-l rv" style="max-width:980px"><img src="assets/img/a-the-bay-s.jpg" srcset="assets/img/a-the-bay-s.jpg 900w, assets/img/a-the-bay.jpg 2000w" sizes="(max-width:1000px) 100vw, 980px" alt="Findhorn Bay, glassy and still, with the Culbin Forest on the left and Findhorn village on the right" loading="lazy"><figcaption>Findhorn Bay, roughly as the doctor saw it from his boat.</figcaption></figure>
+    <div class="prose">
+      <p>It took him many years. Today his grandson owns Binsness, and has known and loved it all his life. The house has lately been refurbished with taste, charm and a sensible respect for its ghosts. There is a new south-west roof terrace with a panorama across the garden and the bay. You may find yourself sitting there far longer than you meant to.</p>
+    </div>
+    <figure class="wide sketch soft rv" style="max-width:980px">
+      <img class="wash" src="assets/sketch/sk-yews-wash.jpg" alt="" loading="lazy">
+      <img class="lines" src="assets/sketch/sk-yews.png" alt="Sketch: the yew avenue leading back up to the house" loading="lazy" style="max-height:80vh;width:auto;margin:0 auto">
+      <figcaption>The yews, as seen by a man in a boat (more or less).</figcaption>
+    </figure>
+    <div class="prose">
+      <p>Binsness is almost an island. It stands alone on Findhorn Bay, with water on two sides and the 5,000 acres of the Culbin Forest at its back. The bay has a renowned micro-climate and the third-highest sunshine count in the British Isles. The nearest house is over a mile away. The pretty town of Forres, named in the first line of <em>Macbeth</em>, is only five miles off. From the garden gate you can walk the beach all the way to Nairn, sixteen miles away, and quite possibly meet nobody at all.</p>
+    </div>
+    <figure class="photo wide tilt-r rv" style="max-width:1080px"><img src="assets/img/a-binsness-bay-s.jpg" srcset="assets/img/a-binsness-bay-s.jpg 900w, assets/img/a-binsness-bay.jpg 2000w" sizes="(max-width:1100px) 100vw, 1080px" alt="Aerial view of sandbars curving through Findhorn Bay, the forested point of Culbin on the left and Findhorn village on the right" loading="lazy"><figcaption>Almost an island: forest on one side, water on all the others.</figcaption></figure>
+    <div class="prose">
+      <p class="fleuron">❦ ❦ ❦</p>
+
+      <h3 id="sand"><small>ii.</small>The Autumn the Sand Came</h3>
+      <p class="dropcap">Before the forest, there was a barony. The Barony of Culbin was rich farmland, so fertile it was called the <em>Girnel</em>, the granary, of Moray. Its laird, Alexander Kinnaird, had a mansion house, a dovecot, an orchard and a lawn. Tenants farmed homesteads all around.</p>
+      <p>Then, in the autumn of 1694, the wind turned. Sand came out of the west, suddenly and with almost no warning. It poured in among the cottages and the laird's house alike. A man ploughing had to leave his plough mid-furrow. Reapers left a field of late barley standing. The sand choked the mouth of the River Findhorn, and the river flooded the fields and burst a new way to the sea. When people came back, there was not a trace of their houses.</p>
+    </div>
+
+    <div class="sandstage" id="sandstage">
+      <div class="sketch"><img class="wash" src="assets/sketch/sk-courtyard-wash.jpg" alt="" loading="lazy"><img class="lines" src="assets/sketch/sk-courtyard.png" alt="Sketch of a stone house, slowly disappearing under sand" loading="lazy"></div>
+      <div class="dune" id="dune"></div>
+      <canvas id="sandfx" aria-hidden="true"></canvas>
+      <div class="year">1694</div>
+      <div class="ctl"><button class="btn" id="sandBtn">Let the wind blow</button></div>
+    </div>
+    <p class="aside">Keep scrolling and the sand keeps coming. (It did in 1694, too.)</p>
+
+    <div class="prose">
+      <p>The laird was ruined. Creditors pursued him, the estate went to auction, and Kinnaird left Culbin for good. The barony lay under the dunes. Every so often, the sand gave something back:</p>
+    </div>
+    <div class="legend wide">
+      <div class="card rv"><h4>The voice in the chimney</h4>In the 18th century a single chimney poked out of the dunes. A man climbed up and called down it, and a ghostly voice answered. He ran. A later storm took the chimney, and the house has not been seen since.</div>
+      <div class="card rv"><h4>The apple tree</h4>A cherry tree was once seen in full blossom on a sand hill. An old man swore he watched an apple tree come up out of the sand, bud, blossom and bear fruit of a <em>particularly delicious</em> flavour.</div>
+      <div class="card rv cards-table" id="devilcard" tabindex="0" role="button"><h4>The card game</h4>One legend says the laird had made a pact with the Devil to play cards, and that the two of them are playing still, inside the largest dune. <span class="hand" style="font-size:20px;color:var(--teal)">(Tap to deal.)</span></div>
+      <div class="card rv"><h4>The coat of arms</h4>Around 1920, sandstone blocks carved with part of the family's coat of arms were found. In the 1930s, a complete outline of foundation stones was briefly exposed, north-west of Kincorth.</div>
+    </div>
+    <div class="prose"><p style="text-align:center">Rub away the sand and see what turns up.</p></div>
+    <div class="scratch rv" id="scratch">
+      <img src="assets/img/x-apple-s.jpg" alt="A single red apple on a lichen-covered branch">
+      <canvas aria-hidden="true"></canvas>
+      <div class="hint">rub here ↯</div>
+    </div>
+    <p class="aside">An apple from the Binsness garden. Delicious, as the old man said.</p>
+
+    <div class="prose">
+      <p class="fleuron">❦ ❦ ❦</p>
+      <h3 id="culbin"><small>iii.</small>The Forest that Grew on a Desert</h3>
+      <p class="dropcap">The sands were tamed in the end by planting trees. Today the Culbin Forest is a vast and varied forest on old dunes. It stretches from Nairn to Findhorn Bay, with gravel tracks for walking, cycling and riding, lichen beds, dragonfly ponds and saltmarsh where the land gives up and the bay begins. Binsness sits at its very eastern end.</p>
+      <p>Walk the <strong>Hill 99 Trail</strong> from the Wellhill car park (3½ miles, about two hours). It winds through pine-covered dunes, past the Gravelpit Ponds and over shingle ridges. Then it climbs Culbin's highest dune, all of 99 feet. A wooden tower at the top gives you a squirrel's-eye view over the treetops to the Moray Firth, and on a clear day to the hills of Sutherland. Trail maps are on the <a href="https://forestryandland.gov.scot/visit/destinations/culbin" target="_blank" rel="noopener">Forestry and Land Scotland website</a>.</p>
+    </div>
+    <figure class="photo wide rv" style="max-width:1080px"><img src="assets/img/a-culbin-forest-s.jpg" srcset="assets/img/a-culbin-forest-s.jpg 900w, assets/img/a-culbin-forest.jpg 2000w" sizes="(max-width:1100px) 100vw, 1080px" alt="The Culbin Forest running down to a sandy point, with a long curved sandbar in the bay" loading="lazy"><figcaption>The Culbin Forest, ending in sand, which is where it began.</figcaption></figure>
+    <div class="duo wide">
+      <figure class="photo tilt-l rv"><img src="assets/img/aerial-coast-s.jpg" alt="Aerial view of the long empty beach and the forest edge along the Moray coast" loading="lazy"><figcaption>The beach to Nairn. Count the people.</figcaption></figure>
+      <figure class="photo tilt-r rv"><img src="assets/img/aerial-boats-s.jpg" alt="Two small boats pulled up among Scots pines and dune grass" loading="lazy"><figcaption>Boats asleep among the pines.</figcaption></figure>
+    </div>
+    <div class="prose"><p style="font-size:16px;color:var(--faint);text-align:center">Many more tales of the drowned barony are in the <a href="https://www.culbinstories.co.uk/stories.html" target="_blank" rel="noopener">Culbin Stories archive</a>.</p></div>
+
+    <div class="prose" id="findhorn">
+      <p class="fleuron">❦ ❦ ❦</p>
+      <h3><small>iv. A short digression</small>Across the Water: Findhorn</h3>
+      <p class="dropcap">Look east from the end of the yew avenue and you are looking at Findhorn. It is a water-taxi ride away, or a paddleboard trip for the hardy, and a very long way round by road. The village has a harbour, two pubs and a bakery. A little inland is one of the odder corners of modern Britain.</p>
+      <p>In 1962 Peter and Eileen Caddy and their friend Dorothy Maclean parked a caravan near Findhorn and started a garden in the sand. The vegetables they grew became legendary for their size. Around them grew the Findhorn Foundation, a spiritual community and eco-village famous for its houses made from old whisky barrels.</p>
+    </div>
+    <figure class="photo wide tilt-l rv" style="max-width:1080px"><img src="assets/img/a-findhorn-bay-s.jpg" srcset="assets/img/a-findhorn-bay-s.jpg 900w, assets/img/a-findhorn-bay.jpg 2000w" sizes="(max-width:1100px) 100vw, 1080px" alt="Aerial view of Findhorn village on its curling spit of sand, with the Culbin Forest across the bay in the foreground" loading="lazy"><figcaption>Findhorn on its spit, with the last of the Culbin Forest in the foreground.</figcaption></figure>
+    <div class="duo wide">
+      <figure class="photo tilt-r rv"><img src="assets/img/x-foundation-s.jpg" srcset="assets/img/x-foundation-s.jpg 900w, assets/img/x-foundation.jpg 2000w" sizes="(max-width:760px) 100vw, 50vw" alt="Aerial view of the Findhorn Foundation: a crowd gathered around a large octagonal building in the woods, with an old caravan in the foreground" loading="lazy"><figcaption>The Findhorn Foundation turns out to wave. Note the caravan: it all began with one.</figcaption></figure>
+      <figure class="photo tilt-l rv"><img src="assets/img/x-findhorn-boats-s.jpg" alt="Boats moored in Findhorn Bay under a heavy sky" loading="lazy"><figcaption>Findhorn moorings, looking back across the bay.</figcaption></figure>
+    </div>
+    <div class="prose">
+      <aside class="card" style="background:#fbf5e7;border:1px solid var(--paper-3);padding:22px 24px;box-shadow:var(--shadow);margin:26px 0">
+        <p class="sc" style="margin:0 0 6px;color:var(--faint);font-size:14px">An interesting fact</p>
+        <p style="margin:0">Findhorn turns up in <em>My Dinner with Andre</em> (1981), one of the strangest films you will ever watch, and a very good one. Over dinner in New York, André Gregory tells Wallace Shawn about his travels. Among them was a visit to the spiritual community at Findhorn, which he describes as a retreat and a possible sanctuary from a modern world he sees as mechanical and conformist. You can test his theory from the roof terrace with a glass of something.</p>
+      </aside>
+    </div>
+    <div class="chapter-end"><a href="#house">Next: The House →</a><a href="#map" data-back>Back to the map</a></div>
+  </div>
+</article>
+
+<!-- ============ CHAPTER II: THE HOUSE ============ -->
+<article class="chapter" id="ch-house" aria-label="The House" tabindex="-1">
+  <div class="chapter-bar"><button class="back" data-back>← Back to the map</button><span class="runhead">Chapter II · The House</span></div>
+  <div class="chapter-body wrap">
+    <p class="folio">Chapter the Second</p>
+    <h2 class="title">The House</h2>
+    <p class="lede">The front has come off, dolls'-house style. Open any room to look inside. If it gets dark, switch the lamps on.</p>
+
+    <div class="dolls" id="dolls"></div>
+    <div class="dolls-tools">
+      <button class="btn" id="lampBtn">Switch the lamps on</button>
+      <button class="btn" id="tourBtn">Give me the tour</button>
+    </div>
+
+    <figure class="sketch soft solo rv"><img class="wash" src="assets/sketch/sk-boardgames-wash.jpg" alt="" loading="lazy"><img class="lines" src="assets/sketch/sk-boardgames.png" alt="Sketch: friends on a patterned rug playing a board game round a low table, a log fire burning in a marble fireplace and shelves of old books behind" loading="lazy"><figcaption>A wet afternoon, a board game and a proper fire.</figcaption></figure>
+
+    <section class="outdoors">
+      <p class="folio">Out of Doors</p>
+      <h4 class="strip-h">Arriving</h4>
+      <div class="strip">
+        <figure class="photo w8 rv"><img src="assets/img/h06-courtyard-s.jpg" srcset="assets/img/h06-courtyard-s.jpg 900w, assets/img/h06-courtyard.jpg 2000w" sizes="(max-width:760px) 100vw, 66vw" alt="The courtyard front of Binsness, gravel sweep and lawn" loading="lazy"><figcaption>The end of the private road. You have arrived.</figcaption></figure>
+        <figure class="photo vid rv"><video data-src="assets/video/v01-arrival" poster="assets/video/v01-arrival.jpg" muted loop playsinline aria-label="Video: walking past white roses into the courtyard"></video><span class="badge">Moving picture</span></figure>
+        <figure class="photo w6 rv"><img src="assets/img/x-kayaks-s.jpg" srcset="assets/img/x-kayaks-s.jpg 900w, assets/img/x-kayaks.jpg 2000w" sizes="(max-width:760px) 100vw, 50vw" alt="An inflatable kayak and two paddleboards laid out on the lawn beside a stone outbuilding" loading="lazy"><figcaption>A kayak and two paddleboards, ready for the bay.</figcaption></figure>
+        <figure class="photo w6 rv"><img src="assets/img/h24-horseman-s.jpg" srcset="assets/img/h24-horseman-s.jpg 900w, assets/img/h24-horseman.jpg 2000w" sizes="(max-width:760px) 100vw, 50vw" alt="The entrance hall: a bronze horseman on a pale wooden plinth, walking sticks in a green urn, and an old oak settle with cushions" loading="lazy"><figcaption>Walking sticks, an oak settle, and a bronze horseman.</figcaption></figure>
+      </div>
+
+      <h4 class="strip-h">The Garden Side</h4>
+      <div class="strip">
+        <figure class="photo w7 rv"><img src="assets/img/h03-crabapples-s.jpg" alt="The house seen through crab apples and late summer planting" loading="lazy"><figcaption>Crab apples, grasses, stone.</figcaption></figure>
+        <figure class="photo w5 rv"><img src="assets/img/h04-grasses-s.jpg" alt="The house in golden evening light behind tall grasses" loading="lazy"><figcaption>Evening, from the borders.</figcaption></figure>
+        <figure class="photo vid rv"><video data-src="assets/video/v03-apples" poster="assets/video/v03-apples.jpg" muted loop playsinline aria-label="Video: apples on a branch, focus pulling back to the house"></video><span class="badge">Moving picture</span></figure>
+        <figure class="photo w8 rv"><img src="assets/img/h19-lunch-table-s.jpg" alt="An outdoor table laid for lunch with orange flowers and wine" loading="lazy"><figcaption>Lunch is outside if the sun allows (it often does).</figcaption></figure>
+        <figure class="photo vid rv"><video data-src="assets/video/v06-lunch" poster="assets/video/v06-lunch.jpg" muted loop playsinline aria-label="Video: the lunch table on the terrace"></video><span class="badge">Moving picture</span></figure>
+        <figure class="sketch soft rv"><img class="wash" src="assets/sketch/sk-waiting-lunch-wash.jpg" alt="" loading="lazy"><img class="lines" src="assets/sketch/sk-waiting-lunch.png" alt="Sketch: a man in a straw hat at the terrace table, looking back over his shoulder, sunlight slanting between the yews" loading="lazy"><figcaption>Waiting for lunch.</figcaption></figure>
+        <figure class="photo rv"><img src="assets/img/h18-window-view-s.jpg" alt="Looking down from a sash window onto the yews and terrace" loading="lazy"><figcaption>From an upstairs window.</figcaption></figure>
+      </div>
+
+      <h4 class="strip-h">The Yew Avenue</h4>
+      <div class="strip">
+        <figure class="photo w6 rv"><img src="assets/img/h21-side-view-s.jpg" srcset="assets/img/h21-side-view-s.jpg 900w, assets/img/h21-side-view.jpg 2000w" sizes="(max-width:760px) 100vw, 50vw" alt="The side of the house in summer: stone gables, sash windows and a glazed garden room behind borders of lavender and globe thistles" loading="lazy"><figcaption>The side of the house, in high summer.</figcaption></figure>
+        <figure class="photo w6 rv"><img src="assets/img/h23-avenue-doctor-s.jpg" srcset="assets/img/h23-avenue-doctor-s.jpg 900w, assets/img/h23-avenue-doctor.jpg 2000w" sizes="(max-width:760px) 100vw, 50vw" alt="The long grass avenue between towering Irish yews, two people walking up from the bay with the far shore beyond" loading="lazy"><figcaption>The avenue the doctor saw from his boat.</figcaption></figure>
+        <figure class="sketch soft w6c rv"><img class="wash" src="assets/sketch/sk-banquet-wash.jpg" alt="" loading="lazy"><img class="lines" src="assets/sketch/sk-banquet.png" alt="Sketch: a long table laid down the middle of the yew avenue, thirty or so guests raising glasses, balloons and bunting overhead and the bay beyond" loading="lazy"><figcaption>When the party outgrows the dining room, the table goes out into the yew avenue.</figcaption></figure>
+      </div>
+    </section>
+    <div class="chapter-end"><a href="#bothy">Next: The Bothy →</a><a href="#map" data-back>Back to the map</a></div>
+  </div>
+</article>
+
+<!-- ============ CHAPTER III: THE BOTHY ============ -->
+<article class="chapter" id="ch-bothy" aria-label="The Bothy" tabindex="-1">
+  <div class="chapter-bar"><button class="back" data-back>← Back to the map</button><span class="runhead">Chapter III · The Bothy</span></div>
+  <div class="chapter-body wrap">
+    <p class="folio">Chapter the Third</p>
+    <h2 class="title">The Bothy</h2>
+    <p class="lede">A small hideaway in the grounds, for two people exactly.</p>
+    <p class="forTwo" aria-hidden="true">🜁 one bedroom · two people · one stove · no excuses</p>
+    <figure class="photo wide tilt-r rv" style="max-width:980px"><img src="assets/img/b0-exterior-s.jpg" srcset="assets/img/b0-exterior-s.jpg 900w, assets/img/b0-exterior.jpg 2000w" sizes="(max-width:1000px) 100vw, 980px" alt="The Bothy from outside: a small stone building with a slate roof, a tree trained flat across its gable, lawn all round and blue doors beyond" loading="lazy"><figcaption>The Bothy from outside: old stone, a slate roof, and a tree trained flat across the gable.</figcaption></figure>
+    <div class="bothy-hero">
+      <figure class="photo tilt-l rv"><img src="assets/img/b1-bedroom-s.jpg" srcset="assets/img/b1-bedroom-s.jpg 900w, assets/img/b1-bedroom.jpg 2000w" sizes="(max-width:860px) 100vw, 55vw" alt="The bothy bedroom: a painted canopy bed and two windows" loading="lazy"><figcaption>The bedroom.</figcaption></figure>
+      <div class="prose">
+        <p class="dropcap">The Bothy is a recent addition to Binsness. It is tastefully decorated, with all the modern facilities for a comfortable stay. It suits a couple who want the forest, the bay and the beaches, and also a door of their own to close.</p>
+        <p>It can be taken on its own or alongside the house. It is good for friends who snore, for grandparents, or for anyone who would like breakfast without a crowd.</p>
+        <p class="hand" style="font-size:22px">Try the stove below. ↓</p>
+      </div>
+    </div>
+    <div class="trio wide" style="margin-top:20px">
+      <figure class="photo rv stove" id="stove" tabindex="0" role="button" aria-pressed="false" aria-label="Light the stove"><img src="assets/img/b4-stove-s.jpg" alt="Close-up of the wood-burning stove and a basket of logs" loading="lazy"><span class="glow"></span><figcaption id="stovecap">Click to light the stove.</figcaption></figure>
+      <figure class="photo rv"><img src="assets/img/b2-sitting-s.jpg" alt="The bothy sitting room with leather sofa, wood-burner and a red rug" loading="lazy"><figcaption>The sitting room.</figcaption></figure>
+      <figure class="photo rv"><img src="assets/img/b3-kitchen-s.jpg" alt="The bothy kitchen with grey cabinets and a little table laid for breakfast" loading="lazy"><figcaption>Breakfast for two.</figcaption></figure>
+    </div>
+    <div class="duo wide" style="max-width:900px">
+      <figure class="photo tilt-r rv"><img src="assets/img/b5-lamp-s.jpg" alt="Bedside detail: a lamp, flowers and a spotted cushion" loading="lazy"><figcaption>Small comforts.</figcaption></figure>
+      <figure class="sketch soft rv" style="margin-top:40px"><img class="wash" src="assets/sketch/sk-bothy-wash.jpg" alt="" loading="lazy"><img class="lines" src="assets/sketch/sk-bothy.png" alt="Sketch of the bothy sitting room" loading="lazy"><figcaption>The Bothy, drawn from memory (and a photograph).</figcaption></figure>
+    </div>
+    <div class="chapter-end"><a href="#garden">Next: The Garden →</a><a href="#map" data-back>Back to the map</a></div>
+  </div>
+</article>
+
+<!-- ============ CHAPTER IV: THE GARDEN ============ -->
+<article class="chapter" id="ch-garden" aria-label="The Garden" tabindex="-1">
+  <div class="chapter-bar"><button class="back" data-back>← Back to the map</button><span class="runhead">Chapter IV · The Garden</span></div>
+  <div class="chapter-body wrap">
+    <p class="folio">Chapter the Fourth</p>
+    <h2 class="title">The Garden</h2>
+    <p class="lede">Sheltered by the forest there is a proper garden: a parterre of box and gravel, deep borders, roses, and the avenue of Irish yews that started it all.</p>
+    <figure class="photo wide tilt-l rv" style="max-width:1000px"><img src="assets/img/g-parterre-bay-s.jpg" srcset="assets/img/g-parterre-bay-s.jpg 900w, assets/img/g-parterre-bay.jpg 2000w" sizes="(max-width:1000px) 100vw, 1000px" alt="Looking down on the box parterre and gravel paths, Irish yews beyond and Findhorn Bay in the distance" loading="lazy"><span class="season">Summer</span><figcaption>The parterre from above, with the yews marching down to the bay.</figcaption></figure>
+
+    <section class="outdoors">
+      <div class="strip">
+        <figure class="photo w7 rv"><img src="assets/img/g-box-yews-s.jpg" alt="Curving box hedges and gravel paths, with a long line of Irish yews and the bay beyond" loading="lazy"><span class="season">Early summer</span><figcaption>Box, gravel and yews, lined up for inspection.</figcaption></figure>
+        <figure class="photo w5 rv"><img src="assets/img/g-rose-s.jpg" alt="An apricot rose in full bloom above a half-open bud" loading="lazy"><span class="season">Summer</span><figcaption>A rose that is mostly apricot and partly sunset.</figcaption></figure>
+        <figure class="photo w6 rv"><img src="assets/img/g-buddleia-s.jpg" alt="Magenta buddleia flowers in front of the stone house, a gravel path, tall grasses and Irish yews" loading="lazy"><span class="season">Late summer</span><figcaption>Buddleia, the butterfly bush, doing its job…</figcaption></figure>
+        <figure class="photo w6 rv"><img src="assets/img/g-butterfly-s.jpg" alt="A small tortoiseshell butterfly feeding on red valerian" loading="lazy"><span class="season">Summer</span><figcaption>…and a small tortoiseshell, here to prove it (on the valerian, mind).</figcaption></figure>
+        <figure class="photo w5 rv"><img src="assets/img/g-agastache-s.jpg" alt="Purple agastache spikes in front of yellow fennel flowers and tall verbena, with a bee" loading="lazy"><span class="season">Summer</span><figcaption>Agastache, fennel and verbena. Spot the bee.</figcaption></figure>
+        <figure class="photo w7 rv"><img src="assets/img/g-valerian-s.jpg" alt="Red valerian and purple snapdragons in a border beneath the tall windows of the house" loading="lazy"><span class="season">Summer</span><figcaption>Valerian and snapdragons crowding the windows.</figcaption></figure>
+        <figure class="photo w4 rv"><img src="assets/img/g-dogwood-s.jpg" alt="White and pink-flushed dogwood flowers among green leaves" loading="lazy"><span class="season">Early summer</span><figcaption>A flowering dogwood, more blossom than leaf.</figcaption></figure>
+        <figure class="photo w4 rv"><img src="assets/img/g-magnolia-s.jpg" alt="White star magnolia flowers in front of an old stone wall and a yellow flowering shrub" loading="lazy"><span class="season">Spring</span><figcaption>Star magnolia by the old wall: winter has given up.</figcaption></figure>
+        <figure class="photo w4 rv"><img src="assets/img/g-spring-yews-s.jpg" alt="Spring blossom between huge Irish yews, with a bench looking out over the bay" loading="lazy"><span class="season">Spring</span><figcaption>Blossom between the yews, and a bench facing the water.</figcaption></figure>
+        <figure class="photo w4 rv"><img src="assets/img/g-pears-s.jpg" alt="A pear tree trained against the stone house, heavy with green pears around a white sash window, buddleia and pale grasses in front" loading="lazy"><span class="season">Late summer</span><figcaption>Pears trained up the wall, ripening by the window.</figcaption></figure>
+        <figure class="photo w4 rv"><img src="assets/img/g-acer-s.jpg" alt="A small Japanese maple with copper-red leaves on the lawn, a row of tall Irish yews behind" loading="lazy"><span class="season">Autumn</span><figcaption>A Japanese maple turning, with the yews standing guard.</figcaption></figure>
+        <figure class="photo w4 rv"><img src="assets/img/g-artichoke-s.jpg" alt="Close-up of globe artichoke heads, green tipped with purple, on tall stems" loading="lazy"><span class="season">Late summer</span><figcaption>Globe artichokes: thistles with ambitions.</figcaption></figure>
+      </div>
+    </section>
+
+    <div class="duo wide" style="margin-top:40px">
+      <figure class="sketch soft rv"><img class="wash" src="assets/sketch/sk-house-garden-wash.jpg" alt="" loading="lazy"><img class="lines" src="assets/sketch/sk-house-garden.png" alt="Sketch of the garden front of the house with tall grasses" loading="lazy"><figcaption>The garden front.</figcaption></figure>
+      <figure class="sketch soft rv"><img class="wash" src="assets/sketch/sk-terrace-wash.jpg" alt="" loading="lazy"><img class="lines" src="assets/sketch/sk-terrace.png" alt="Sketch of the round stone terrace with a long table, yews beyond" loading="lazy"><figcaption>The round terrace, where the kettle comes out.</figcaption></figure>
+    </div>
+    <div class="chapter-end"><a href="#area">Next: The Area Surrounding Binsness →</a><a href="#map" data-back>Back to the map</a></div>
+  </div>
+</article>
+
+<!-- ============ CHAPTER V: THE AREA SURROUNDING BINSNESS ============ -->
+<article class="chapter" id="ch-area" aria-label="The Area Surrounding Binsness" tabindex="-1">
+  <div class="chapter-bar"><button class="back" data-back>← Back to the map</button><span class="runhead">Chapter V · The Area Surrounding Binsness</span></div>
+  <div class="chapter-body wrap">
+    <p class="folio">Chapter the Fifth</p>
+    <h2 class="title">The Area Surrounding Binsness</h2>
+    <p class="lede">Past the yews, the land runs out into saltmarsh, sand, pine forest and sea. These pictures come from our own walks, in every season and most weathers.</p>
+    <figure class="photo wide tilt-r rv" style="max-width:1080px"><img src="assets/img/r-forest-edge-s.jpg" srcset="assets/img/r-forest-edge-s.jpg 900w, assets/img/r-forest-edge.jpg 2000w" sizes="(max-width:1100px) 100vw, 1080px" alt="A calm blue bay under white clouds, a line of pine forest on the left reflected in the water, Findhorn far off on the right" loading="lazy"><figcaption>The edge of the forest, the edge of the bay, and not another soul.</figcaption></figure>
+
+    <section class="outdoors">
+      <h4 class="strip-h">The Bay at Your Feet</h4>
+      <div class="strip">
+        <figure class="photo w8 vid-wide rv"><video data-src="assets/video/v11-seals" poster="assets/video/v11-seals.jpg" muted loop playsinline aria-label="Video: grey seals hauling out on the shore and slipping back into the water"></video><span class="badge">Moving picture</span><figcaption>The neighbours. Seals haul out here and watch you as closely as you watch them.</figcaption></figure>
+        <figure class="photo w4 rv"><img src="assets/img/r-saltmarsh-sun-s.jpg" alt="Low sun over the saltmarsh, pools of water shining between tufts of grass" loading="lazy"><figcaption>Saltmarsh, late afternoon.</figcaption></figure>
+        <figure class="photo w5 rv"><img src="assets/img/r-blue-boat-s.jpg" alt="A dark blue wooden rowing boat moored on still water, perfectly reflected" loading="lazy"><figcaption>A boat that would like to be borrowed.</figcaption></figure>
+        <figure class="photo w7 rv"><img src="assets/img/r-seals-s.jpg" alt="A crowd of seals lying on a sandy shore at the water's edge" loading="lazy"><figcaption>A committee meeting of seals.</figcaption></figure>
+        <figure class="photo w4 rv"><img src="assets/img/r-mist-boat-s.jpg" alt="A small sailing boat alone on silver, misty water" loading="lazy"><figcaption>Grey days are beautiful too.</figcaption></figure>
+        <figure class="photo w4 rv"><img src="assets/img/r-frost-creek-s.jpg" alt="A narrow creek winding through frosted marsh grass towards the bay" loading="lazy"><figcaption>A frosty creek finds its own way out.</figcaption></figure>
+        <figure class="photo w4 rv"><img src="assets/img/r-swans-s.jpg" alt="Black and white photograph of two swans taking off from the water below a dark line of trees" loading="lazy"><figcaption>Swans, leaving in a hurry.</figcaption></figure>
+        <figure class="photo w12 rv"><img src="assets/img/r-boathouse-s.jpg" srcset="assets/img/r-boathouse-s.jpg 900w, assets/img/r-boathouse.jpg 2000w" sizes="(max-width:1100px) 100vw, 1080px" alt="A dark timber boat house with a rusty red roof on a pebble shore, the stumps of an old jetty running into calm grey water, framed by Scots pines" loading="lazy"><figcaption>The boat house, and what is left of the old jetty.</figcaption></figure>        <figure class="sketch soft w5 rv"><img class="wash" src="assets/sketch/sk-boat-wash.jpg" alt="" loading="lazy"><img class="lines" src="assets/sketch/sk-boat.png" alt="Sketch: five people in life jackets sitting in a rowing boat in clear shallow water, the bay flat and silver behind" loading="lazy"><figcaption>Life jackets on, everyone aboard.</figcaption></figure>
+        <figure class="sketch soft w7 rv"><img class="wash" src="assets/sketch/sk-swim-wash.jpg" alt="" loading="lazy"><img class="lines" src="assets/sketch/sk-swim.png" alt="Sketch: two people holding hands as they wade out into the bay, low hills on the far shore" loading="lazy"><figcaption>In for a dip. Holding hands helps with the cold.</figcaption></figure>
+        <figure class="photo w12 rv"><img src="assets/img/r-dusk-stump-s.jpg" srcset="assets/img/r-dusk-stump-s.jpg 900w, assets/img/r-dusk-stump.jpg 2000w" sizes="(max-width:1100px) 100vw, 1080px" alt="Dusk on the bay: a tangled driftwood root in the foreground, a curve of sand and pines, and the moon over blue water" loading="lazy"><figcaption>Moonrise over the bay. Walk back before it gets properly dark.</figcaption></figure>
+      </div>
+
+      <h4 class="strip-h">The Beaches</h4>
+      <div class="strip">
+        <figure class="photo w8 rv"><img src="assets/img/r-empty-beach-s.jpg" srcset="assets/img/r-empty-beach-s.jpg 900w, assets/img/r-empty-beach.jpg 2000w" sizes="(max-width:760px) 100vw, 66vw" alt="A vast, empty sandy beach under a blue sky, stretching to a faint line of dunes" loading="lazy"><figcaption>A busy day on the beach.</figcaption></figure>
+        <figure class="sketch soft w4 rv"><img class="wash" src="assets/sketch/sk-beach-wash.jpg" alt="" loading="lazy"><img class="lines" src="assets/sketch/sk-beach.png" alt="Sketch: two young women walking along a wide wet beach under a cloudy sky, one turning back with a smile" loading="lazy"><figcaption>Miles of sand and nobody in a hurry.</figcaption></figure>
+        <figure class="photo w6 vid-wide rv"><video data-src="assets/video/v12-blowing-sand" poster="assets/video/v12-blowing-sand.jpg" muted loop playsinline aria-label="Video: wind blowing streams of dry sand across a wide beach"></video><span class="badge">Moving picture</span><figcaption>The wind still moves the sand about, though more politely than in 1694.</figcaption></figure>
+        <figure class="photo w6 rv"><img src="assets/img/r-beach-clouds-s.jpg" alt="A curving sandy beach and tidal pool under a sky of towering white clouds" loading="lazy"><figcaption>Big skies, as advertised.</figcaption></figure>
+        <figure class="sketch soft w3 rv"><img class="wash" src="assets/sketch/sk-handstand-wash.jpg" alt="" loading="lazy"><img class="lines" src="assets/sketch/sk-handstand.png" alt="Sketch: someone doing a handstand on a wide beach with waves behind" loading="lazy"><figcaption>There is room for this sort of thing.</figcaption></figure>
+        <figure class="photo w3 rv"><img src="assets/img/r-root-dunes-s.jpg" alt="A bleached tree root stranded on a pebbly beach below sandy dunes" loading="lazy"><figcaption>Driftwood sculpture, no entry fee.</figcaption></figure>
+        <figure class="photo w3 rv"><img src="assets/img/r-contraption-s.jpg" alt="A rusty iron contraption with a cog wheel half buried in the sand below the dunes" loading="lazy"><figcaption>A rusting contraption of uncertain purpose. Theories welcome.</figcaption></figure>
+        <figure class="photo w3 rv"><img src="assets/img/r-waves-s.jpg" alt="Small waves foaming onto a pebble beach under a cloudy blue sky" loading="lazy"><figcaption>The Moray Firth, arriving.</figcaption></figure>
+      </div>
+
+      <h4 class="strip-h">The Beachcomber's Tray</h4>
+      <p class="hand tray-hint">Things we found and put back. Tap one for its label.</p>
+      <div class="tray" id="tray">
+        <button class="spec rv" type="button" aria-expanded="false"><img src="assets/img/t-razor-s.jpg" alt="Two razor shells among wet pebbles" loading="lazy"><span class="tag">№ 1</span><span class="note">Razor shells. They are named after the old cut-throat razor, which they resemble exactly.</span></button>
+        <button class="spec rv" type="button" aria-expanded="false"><img src="assets/img/t-whelk-s.jpg" alt="A pale, worn whelk shell on a bed of pebbles" loading="lazy"><span class="tag">№ 2</span><span class="note">A whelk, polished by the tide. Very nearly a pebble itself.</span></button>
+        <button class="spec rv" type="button" aria-expanded="false"><img src="assets/img/t-seaweed-s.jpg" alt="A frond of fine seaweed lying on rippled sand above a white shell" loading="lazy"><span class="tag">№ 3</span><span class="note">Seaweed, pressed flat by the sea and laid out like a botanical print.</span></button>
+        <button class="spec rv" type="button" aria-expanded="false"><img src="assets/img/t-holed-stone-s.jpg" alt="A yellow crusty object with a hole through it, on colourful pebbles" loading="lazy"><span class="tag">№ 4</span><span class="note">Something with a hole in it. Stone? Sponge? The household is divided.</span></button>
+        <button class="spec rv" type="button" aria-expanded="false"><img src="assets/img/t-heart-stone-s.jpg" alt="Black and white photograph of a smooth heart-shaped stone in frosty grass" loading="lazy"><span class="tag">№ 5</span><span class="note">A heart-shaped stone. We left it where it was. Mostly.</span></button>
+        <button class="spec rv" type="button" aria-expanded="false"><img src="assets/img/t-driftwood-s.jpg" alt="A spiky piece of driftwood standing on smooth wet sand" loading="lazy"><span class="tag">№ 6</span><span class="note">Driftwood, posing.</span></button>
+        <button class="spec rv" type="button" aria-expanded="false"><img src="assets/img/t-feather-s.jpg" alt="A small white feather on fallen brown beech leaves" loading="lazy"><span class="tag">№ 7</span><span class="note">A feather on beech leaves. Not from the beach: the forest gets a turn too.</span></button>
+        <button class="spec rv" type="button" aria-expanded="false"><img src="assets/img/t-pebbles-s.jpg" alt="Smooth pebbles in grey, rust and cream scattered on sand" loading="lazy"><span class="tag">№ 8</span><span class="note">Pebbles in every colour. Bring an empty pocket, or better, leave them be.</span></button>
+      </div>
+
+      <h4 class="strip-h">Into the Forest</h4>
+      <div class="strip">
+        <figure class="photo w5 rv"><img src="assets/img/r-dune-path-s.jpg" alt="A sandy path between tall pines leading down through the dunes towards the sea" loading="lazy"><figcaption>Through the pines to the sea.</figcaption></figure>
+        <figure class="photo w7 rv"><img src="assets/img/r-heather-s.jpg" alt="Purple heather carpeting the forest floor among young birch trees" loading="lazy"><figcaption>August, when the heather comes out.</figcaption></figure>
+        <figure class="photo w4 rv"><img src="assets/img/r-sundew-s.jpg" alt="A red sundew plant with sticky tentacled leaves among moss" loading="lazy"><figcaption>A sundew. It eats insects, so keep moving.</figcaption></figure>
+        <figure class="photo w4 rv"><img src="assets/img/r-butterwort-s.jpg" alt="A pale green star of butterwort leaves among moss and small stones" loading="lazy"><figcaption>Butterwort, also carnivorous. The forest floor is fiercer than it looks.</figcaption></figure>
+        <figure class="photo w4 rv"><img src="assets/img/r-lichen-s.jpg" alt="Black and white photograph of a pine cone beside a cushion of white lichen" loading="lazy"><figcaption>Culbin is famous among botanists for its lichens.</figcaption></figure>
+        <figure class="photo w7 rv"><img src="assets/img/r-signpost-s.jpg" alt="A wooden fingerpost in the pine forest pointing to Findhorn Bay one way and Wellhill Car Park the other" loading="lazy"><figcaption>All roads lead to the bay. The other one leads to the car park.</figcaption></figure>
+        <figure class="photo w5 rv"><img src="assets/img/r-forest-sunset-s.jpg" alt="A forest track between dark pines under a fiery orange sunset" loading="lazy"><figcaption>Home time.</figcaption></figure>
+        <figure class="photo w3 rv"><img src="assets/img/r-cairn-s.jpg" alt="A small cairn of stacked stones on a tree stump among heather" loading="lazy"><figcaption>Someone was here before you. Add a stone.</figcaption></figure>
+        <figure class="photo w3 rv"><img src="assets/img/r-lamb-s.jpg" alt="A lamb standing in the middle of a gravel track beside a field gate" loading="lazy"><figcaption>Traffic on the lane.</figcaption></figure>
+        <figure class="photo w3 rv"><img src="assets/img/r-cyclist-s.jpg" alt="A cyclist on a long straight gravel track between gorse bushes" loading="lazy"><figcaption>Bring bicycles. The tracks go on for miles.</figcaption></figure>
+        <figure class="sketch soft w3 rv"><img class="wash" src="assets/sketch/sk-bicycles-wash.jpg" alt="" loading="lazy"><img class="lines" src="assets/sketch/sk-bicycles.png" alt="Sketch: two women cycling towards us across a wooden-decked bridge, an old iron girder bridge behind" loading="lazy"><figcaption>Over the bridge and on along the path.</figcaption></figure>
+      </div>
+
+      <h4 class="strip-h">When It Snows</h4>
+      <div class="strip">
+        <figure class="photo w8 rv"><img src="assets/img/r-snow-house-s.jpg" srcset="assets/img/r-snow-house-s.jpg 900w, assets/img/r-snow-house.jpg 2000w" sizes="(max-width:760px) 100vw, 66vw" alt="Binsness, a grey stone house with tall chimneys, in deep snow under a blue sky" loading="lazy"><figcaption>Binsness in its winter coat.</figcaption></figure>
+        <figure class="photo w4 rv"><img src="assets/img/r-snow-forest-s.jpg" alt="A straight track through snow-covered pines under a bright blue sky" loading="lazy"><figcaption>The forest, freshly iced.</figcaption></figure>
+        <figure class="photo w5 rv"><img src="assets/img/r-snow-walkers-s.jpg" alt="Two people walking away along a snowy forest track among tall pines" loading="lazy"><figcaption>Boots on, flask in pocket.</figcaption></figure>
+        <figure class="photo w7 rv"><img src="assets/img/r-snow-terrace-s.jpg" alt="The roof terrace dusted with snow, white iron chairs and table, the yew avenue beyond" loading="lazy"><figcaption>The roof terrace, closed for the afternoon.</figcaption></figure>
+      </div>
+
+      <h4 class="strip-h">Closer to Home</h4>
+      <div class="strip">
+        <figure class="photo w5 rv"><img src="assets/img/r-private-s.jpg" alt="A spaniel in long grass beside a sign reading Binsness Private, with yellow gorse and pines behind" loading="lazy"><figcaption>The private road, with its own welcoming committee.</figcaption></figure>
+        <figure class="photo w7 rv"><img src="assets/img/r-yew-sunrise-s.jpg" alt="The sun rising at the end of the yew avenue, the trees in dark silhouette" loading="lazy"><figcaption>Sunrise, threaded through the yews.</figcaption></figure>
+        <figure class="photo w4 rv"><img src="assets/img/r-gorse-s.jpg" alt="Bright yellow gorse flowers against a silvery shrub" loading="lazy"><figcaption>Gorse, smelling faintly of coconut.</figcaption></figure>
+        <figure class="photo w4 rv"><img src="assets/img/r-bluebells-s.jpg" alt="A woodland floor covered in bluebells and green leaves" loading="lazy"><figcaption>Bluebells, in May.</figcaption></figure>
+        <figure class="photo w4 rv"><img src="assets/img/r-gardener-s.jpg" alt="Someone in a green raincoat pulling a hose along a path between borders, Irish yews behind" loading="lazy"><figcaption>Somebody has to water it all.</figcaption></figure>
+      </div>
+    </section>
+
+    <div class="chapter-end"><a href="#explore">Next: Things to Do →</a><a href="#map" data-back>Back to the map</a></div>
+  </div>
+</article>
+
+<!-- ============ CHAPTER VI: THINGS TO DO ============ -->
+<article class="chapter" id="ch-explore" aria-label="Things to Do" tabindex="-1">
+  <div class="chapter-bar"><button class="back" data-back>← Back to the map</button><span class="runhead">Chapter VI · Things to Do</span></div>
+  <div class="chapter-body wrap">
+    <p class="folio">Chapter the Sixth</p>
+    <h2 class="title">The Expedition Deck</h2>
+    <p class="lede">Castles, rapids, monks, whisky, ponies and a dinosaur kingdom. Pick a suit, or let the deck choose your day. Turn a card over for the details.</p>
+    <figure class="photo wide rv" style="max-width:1080px"><img src="assets/img/a-findhorn-river-s.jpg" srcset="assets/img/a-findhorn-river-s.jpg 900w, assets/img/a-findhorn-river.jpg 2000w" sizes="(max-width:1100px) 100vw, 1080px" alt="The River Findhorn rushing through a gorge between autumn trees in red, orange and silver" loading="lazy" style="max-height:62vh;object-fit:cover;width:100%"><figcaption>The River Findhorn, further upstream, in its autumn finery.</figcaption></figure>
+    <div class="chips" id="chips" role="group" aria-label="Filter activities"></div>
+    <div style="text-align:center"><button class="btn teal" id="dealBtn">Deal me a day</button></div>
+    <figure class="golfmap" id="golfmap" hidden>
+      <svg viewBox="0 0 860 400" role="group" aria-label="Hand-drawn map of the golf courses near Binsness along the Moray Firth coast. Each flag turns over that club's card.">
+        <rect x="0" y="0" width="860" height="400" fill="#efe6cf"/>
+        <path d="M0 0 H860 V62 C780 70 700 66 640 66 C600 66 575 62 545 60 C515 58 490 78 468 92 C440 108 410 128 385 140 L372 150 C360 160 330 175 300 186 C270 196 250 200 230 200 C190 202 150 210 118 222 C90 232 70 250 55 275 C40 300 20 312 0 318 Z" fill="#cfe0dc" stroke="var(--ink)" stroke-width="1.6"/>
+        <ellipse cx="364" cy="160" rx="18" ry="9" fill="#cfe0dc" stroke="var(--ink)" stroke-width="1.2"/>
+        <path d="M366 169 C356 200 372 230 352 262 S346 330 330 400" fill="none" stroke="#9fc1c4" stroke-width="3"/>
+        <g fill="none" stroke="var(--ink)" stroke-width="1" opacity=".55"><path d="M120 40 q8 -6 16 0 q8 6 16 0 M300 70 q8 -6 16 0 q8 6 16 0 M640 30 q8 -6 16 0 q8 6 16 0 M760 40 q8 -6 16 0"/></g>
+        <text x="40" y="60" class="gm-sea">Moray Firth</text>
+        <!-- the A96 -->
+        <path d="M60 318 C120 280 180 236 250 218 S340 196 388 196 S500 160 552 152 S660 160 760 178" fill="none" stroke="#b9a48a" stroke-width="2.5" stroke-dasharray="7 6"/>
+        <text x="640" y="182" class="gm-small">A96</text>
+        <!-- towns -->
+        <g class="gm-town">
+          <circle cx="60" cy="320" r="4"/><text x="40" y="344">Inverness</text>
+          <circle cx="252" cy="214" r="4"/><text x="260" y="236">Nairn</text>
+          <circle cx="388" cy="196" r="4"/><text x="336" y="218">Forres</text>
+          <circle cx="552" cy="152" r="4"/><text x="560" y="146">Elgin</text>
+          <circle cx="468" cy="98" r="4"/><text x="430" y="122">Burghead</text>
+          <circle cx="596" cy="68" r="4"/><text x="606" y="92">Lossiemouth</text>
+        </g>
+        <!-- Binsness -->
+        <g transform="translate(336 166)"><path d="M-12 8 v-12 l12 -10 l12 10 v12 z" fill="#e7dcc4" stroke="var(--ink)" stroke-width="1.4"/><path d="M-12 -4 l12 -10 l12 10" fill="#8e8a93" stroke="var(--ink)" stroke-width="1.2"/></g>
+        <text x="150" y="162" class="gm-hand">Binsness, you are here</text>
+        <path d="M306 156 q12 -2 18 6" fill="none" stroke="var(--ink)" stroke-width="1.2" marker-end="url(#gmArrow)"/>
+        <defs><marker id="gmArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--ink)"/></marker></defs>
+        <!-- golf flags -->
+        <g class="pin" data-card="Cabot Highlands" tabindex="0" role="button" aria-label="Cabot Highlands: show its card">
+          <ellipse cx="110" cy="238" rx="8" ry="3" fill="var(--ink)"/><path d="M110 238 V206" stroke="var(--ink)" stroke-width="2"/><path class="flag" d="M110 206 l20 6 l-20 6 z"/>
+          <rect class="gm-tag" x="20" y="250" width="128" height="26" rx="2"/><text class="gm-tagtext" x="84" y="268">Cabot Highlands</text>
+        </g>
+        <g class="pin" data-card="Nairn Golf Club" tabindex="0" role="button" aria-label="Nairn Golf Club: show its card">
+          <ellipse cx="236" cy="206" rx="8" ry="3" fill="var(--ink)"/><path d="M236 206 V174" stroke="var(--ink)" stroke-width="2"/><path class="flag" d="M236 174 l20 6 l-20 6 z"/>
+          <rect class="gm-tag" x="160" y="100" width="126" height="26" rx="2"/><text class="gm-tagtext" x="223" y="118">Nairn Golf Club</text>
+        </g>
+        <g class="pin" data-card="Forres Golf Club" tabindex="0" role="button" aria-label="Forres Golf Club: show its card">
+          <ellipse cx="404" cy="228" rx="8" ry="3" fill="var(--ink)"/><path d="M404 228 V196" stroke="var(--ink)" stroke-width="2"/><path class="flag" d="M404 196 l20 6 l-20 6 z"/>
+          <rect class="gm-tag" x="418" y="216" width="132" height="26" rx="2"/><text class="gm-tagtext" x="484" y="234">Forres Golf Club</text>
+        </g>
+        <g class="pin" data-card="Covesea Links" tabindex="0" role="button" aria-label="Covesea Links: show its card">
+          <ellipse cx="530" cy="66" rx="8" ry="3" fill="var(--ink)"/><path d="M530 66 V34" stroke="var(--ink)" stroke-width="2"/><path class="flag" d="M530 34 l20 6 l-20 6 z"/>
+          <rect class="gm-tag" x="426" y="20" width="104" height="26" rx="2"/><text class="gm-tagtext" x="478" y="38">Covesea Links</text>
+        </g>
+        <!-- frivolities -->
+        <ellipse cx="470" cy="320" rx="34" ry="10" fill="#e8d29c" stroke="var(--ink)" stroke-width="1"/>
+        <text x="410" y="352" class="gm-hand">here be bunkers</text>
+        <g transform="translate(720 120)"><ellipse rx="16" ry="7" fill="#8e8a93" stroke="var(--ink)"/><circle cx="14" cy="-4" r="5" fill="#8e8a93" stroke="var(--ink)"/></g>
+        <text x="660" y="300" class="gm-hand">Not to scale. Tap a flag.</text>
+      </svg>
+      <figcaption>Four courses within easy reach. Tap a flag to turn over its card. Map drawn by us, roughly.</figcaption>
+    </figure>
+    <div class="deck" id="deck"></div>
+    <p class="aside" style="margin-top:40px">We can arrange many of these for you, including a boat over to the pubs in Findhorn and Burghead. Just ask.</p>
+    <div class="chapter-end"><a href="#food">Next: Food →</a><a href="#map" data-back>Back to the map</a></div>
+  </div>
+</article>
+
+<!-- ============ CHAPTER VII: FOOD ============ -->
+<article class="chapter" id="ch-food" aria-label="Food" tabindex="-1">
+  <div class="chapter-bar"><button class="back" data-back>← Back to the map</button><span class="runhead">Chapter VII · Food</span></div>
+  <div class="chapter-body wrap">
+    <p class="folio">Chapter the Seventh</p>
+    <h2 class="title">Food, Takeaways &amp; Private Dining</h2>
+    <div class="menu rv">
+      <h3>Tonight's Menu</h3>
+      <p class="hand" style="font-size:22px;margin:0">(served across the bay)</p>
+      <div class="course">
+        <div class="dish">The Bakehouse, Findhorn</div>
+        <p class="desc">In the middle of the bayside village: an organic market, bakery, weekend pizza, fresh produce, wholefoods and hot takeaway food and drinks. Caters for almost all diets.</p>
+        <p class="tel"><a href="tel:+441309691826">01309 691826</a> · <a href="https://highlandfoodanddrink.org/the-bakehouse-cafe-2/" target="_blank" rel="noopener">website</a></p>
+      </div>
+      <p class="fleuron" style="margin:10px 0">~</p>
+      <div class="course">
+        <div class="dish">Pizza for Planet, Findhorn Foundation</div>
+        <p class="desc">Pizza to take away, from across the water.</p>
+        <p class="tel"><a href="tel:+447840381363">07840 381363</a> · <a href="https://pizzaforplanet.org/" target="_blank" rel="noopener">website</a></p>
+      </div>
+      <p class="fleuron" style="margin:10px 0">~</p>
+      <div class="course">
+        <div class="dish">The Kimberley Inn, Findhorn</div>
+        <p class="desc">A village pub, a boat ride from the house.</p>
+        <p class="tel"><a href="tel:+441309690492">01309 690492</a></p>
+      </div>
+      <p class="fleuron" style="margin:10px 0">~</p>
+      <div class="course">
+        <div class="dish">The Crown &amp; Anchor, Findhorn</div>
+        <p class="desc">The other pub, for those who like to compare.</p>
+        <p class="tel"><a href="tel:+441309690243">01309 690243</a></p>
+      </div>
+      <p class="fleuron" style="margin:10px 0">~</p>
+      <div class="course">
+        <div class="dish">Wester Hardmuir, near Nairn</div>
+        <p class="desc">The place for the freshest local food: vegetables and fruit straight from the farm, salmon, and ice cream. Stock up on the way back and you need not leave Binsness again for days.</p>
+        <p class="tel"><a href="tel:+441309641259">01309 641259</a> · Wester Hardmuir, Nairn IV12 5QG</p>
+      </div>
+      <div class="special">
+        <p style="margin:0 0 8px">Private cooking, ingredient shopping included, can be arranged on request.</p>
+        <p style="margin:0">For the pampered option, <strong>Lindsay</strong> is more than happy to cook and clear up for you. That can be a fully catered week or one slap-up four-course dinner as a special treat. Please ask about this before booking, to check Lindsay's availability, prices and menus.</p>
+      </div>
+    </div>
+    <div class="chapter-end"><a href="#booking">Next: Booking →</a><a href="#map" data-back>Back to the map</a></div>
+  </div>
+</article>
+
+<!-- ============ CHAPTER VIII: BOOKING ============ -->
+<article class="chapter" id="ch-booking" aria-label="Booking" tabindex="-1">
+  <div class="chapter-bar"><button class="back" data-back>← Back to the map</button><span class="runhead">Chapter VIII · Booking</span></div>
+  <div class="chapter-body wrap">
+    <p class="folio">Chapter the Eighth</p>
+    <h2 class="title">Send Word</h2>
+    <p class="lede">Break the seal.</p>
+    <div class="envelope" id="envelope" tabindex="0" role="button" aria-expanded="false" aria-controls="letter" aria-label="Open the envelope">
+      <div class="back"></div><div class="flap"></div><div class="front"></div>
+      <div class="wax" aria-hidden="true"><svg viewBox="0 0 132 96"><use href="#crest"/></svg></div>
+      <div class="addr">To Lindsay, at Binsness</div>
+    </div>
+    <div class="letter" id="letter">
+      <h3>Who to write to</h3>
+      <dl>
+        <dt>Name</dt><dd>Lindsay Owen</dd>
+        <dt>Email</dt><dd><a href="mailto:lindsayo1981@hotmail.com">lindsayo1981@hotmail.com</a></dd>
+        <dt>Telephone</dt><dd><a href="tel:+447746227837">+44 7746 227837</a></dd>
+      </dl>
+
+      <h3>Securing your dates</h3>
+      <dl>
+        <dt>Deposit</dt><dd>£500 for the House · £200 for the Bothy</dd>
+        <dt>Balance</dt><dd>Due six weeks before your stay begins</dd>
+        <dt>Cancellation</dt><dd>If you cancel less than six weeks before the start of your booking, the deposit is lost</dd>
+      </dl>
+
+      <h3>Paying the deposit</h3>
+      <p>Bank details will be sent when your dates are confirmed.</p>
+
+      <h3>Or jot us a note</h3>
+      <form class="enquiry" id="enquiry">
+        <label>Your name<input name="name" required></label>
+        <label>Staying in<select name="where"><option>The House</option><option>The Bothy</option><option>The House and the Bothy</option></select></label>
+        <label>Arriving<input type="date" name="from"></label>
+        <label>Leaving<input type="date" name="to"></label>
+        <label>Number of guests<input type="number" name="guests" min="1" value="2"></label>
+        <label>Lindsay to cook?<select name="chef"><option>Not this time</option><option>One special dinner</option><option>Please ask me about it</option></select></label>
+        <label class="full">Anything else<textarea name="msg" placeholder="Dogs, birthdays, dolphins…"></textarea></label>
+        <div class="full"><button class="btn teal" type="submit">Write the email</button> <span class="hand" style="font-size:19px;color:var(--faint)">(this opens your own email program)</span></div>
+      </form>
+    </div>
+    <div class="chapter-end"><a href="#map" data-back>Back to the map</a></div>
+  </div>
+</article>
+
+<!-- room viewer for the dolls' house -->
+<div class="roompanel" id="roompanel" role="dialog" aria-modal="true" aria-labelledby="roomtitle">
+  <div class="scrim" data-close></div>
+  <div class="leaf">
+    <button class="x" data-close aria-label="Close">×</button>
+    <h3 id="roomtitle"></h3>
+    <p class="cap" id="roomcap"></p>
+    <div class="roomgrid" id="roomgrid"></div>
+    <div class="nav"><button class="btn" id="prevRoom">← Previous room</button><button class="btn" id="nextRoom">Next room →</button></div>
+  </div>
+</div>
+
+<footer>
+  <svg class="crest-img" viewBox="0 0 132 96" aria-hidden="true"><use href="#crest"/></svg>
+  <p class="sc">Binsness House &amp; Bothy · Findhorn Bay · Forres · Moray</p>
+  <p style="font-size:14px">Photographs and film of Binsness © the owners.</p>
+</footer>
+
+<script src="assets/js/site.js"></script>
+</body>
+</html>

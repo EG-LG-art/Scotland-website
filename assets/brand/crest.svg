@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 132 96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+  <title>Family crest: an armoured arm embowed, brandishing a scimitar, on a wreath</title>
+  <!-- scimitar -->
+  <path d="M57 13 C78 6 104 7 128 19 C110 18 86 19 62 22 Z" fill="currentColor" stroke-width="1.5"/>
+  <path d="M54 5 L56 22" stroke-width="3.2"/>
+  <path d="M49 14 Q56 11 63 13" stroke-width="2.4"/>
+  <!-- gauntlet -->
+  <path d="M46 21 C50 16 60 16 64 20 C66 24 64 30 58 31 L50 31 C45 30 43 25 46 21 Z" fill="currentColor" stroke-width="1.5"/>
+  <!-- upper arm (wrist to elbow) -->
+  <path d="M50 30 L13 59 L23 66 L60 34 Z" fill="currentColor" stroke-width="1.5"/>
+  <path d="M46 34 L19 56 M51 37 L24 60 M42 40 L22 57" stroke="var(--crest-hl, #f4ecdc)" stroke-width="1.1" opacity=".75"/>
+  <!-- elbow couter -->
+  <circle cx="16" cy="62" r="7" fill="currentColor" stroke-width="1.5"/>
+  <path d="M12 59 Q16 56 20 59" stroke="var(--crest-hl, #f4ecdc)" stroke-width="1" opacity=".7"/>
+  <!-- forearm (elbow down to wreath) -->
+  <path d="M11 66 L20 58 L60 82 L49 86 Z" fill="currentColor" stroke-width="1.5"/>
+  <path d="M20 64 L50 81 M24 61 L56 80 M18 67 L44 83" stroke="var(--crest-hl, #f4ecdc)" stroke-width="1.1" opacity=".75"/>
+  <!-- wreath / torse -->
+  <path d="M4 86 C4 81 8 80 12 80 L92 80 C97 80 99 83 99 86 C99 89 97 92 92 92 L12 92 C8 92 4 91 4 86 Z" fill="currentColor" stroke-width="1.5"/>
+  <path d="M18 81 L24 91 M34 81 L40 91 M50 81 L56 91 M66 81 L72 91 M82 81 L88 91" stroke="var(--crest-hl, #f4ecdc)" stroke-width="1.4" opacity=".8"/>
+</svg>
